@@ -1,15 +1,15 @@
 {
-  "name": "hb-bootstrap",
+  "name": "dev-portfolio",
   "version": "0.3.0",
-  "homepage": "https://github.com/jvandemo/hb-bootstrap",
+  "homepage": "https://smmalik3.github.io",
   "authors": [
-    "Jurgen Van de Moere <jurgen.van.de.moere@gmail.com>"
+    "Salman Malik <maliks786@gmail.com>"
   ],
-  "description": "Harp Boilerplate of a Bootstrap website",
+  "description": "Salman Malik's Developer Portfolio",
   "keywords": [
-    "harp",
-    "boilerplate",
-    "bootstrap"
+    "dev",
+    "portfolio",
+    "code"
   ],
   "license": "MIT",
   "private": true,
