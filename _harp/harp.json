@@ -1,15 +1,16 @@
 {
 	"globals": {
-		"title": "Celso Mireles",
-		"description": "I write words. About ideas and things.",
-		"url": "http://celsomireles.com",
-		"username": "Celso Mireles",
-		"user_description": "Web Developer and Writer",
-		"user_title": "Digital Strategist",
-		"email": "celso.mireles@gmail.com",
-		"twitter_username": "celsom3",
-		"github_username": "celsom3",
-		"disqus_username": "celsomireles",
+		"title": "Salman Malik",
+		"description": "Sharing thoughts around different projects I am working on.",
+		"url": "https://smmalik3.github.io/",
+		"username": "Salman Malik",
+		"user_description": "Software Developer and AI Enthusiast",
+		"user_title": "Software Developer / AI Enthusiast",
+		"email": "maliks786@gmail.com",
+		"twitter_username": "CryptoSalPal",
+		"github_username": "smmalik3",
+		"instagram_username": "maliks786",
+		"disqus_username": "maliks786",
 
 		"links": [
 			{
@@ -19,6 +20,10 @@
 			{
 				"title": "About Me",
 				"url": "/about"
+			},
+			{
+				"title": "Projects",
+				"url": "/projects"
 			}
 		]
 	}
