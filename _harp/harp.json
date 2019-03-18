@@ -20,6 +20,10 @@
 			{
 				"title": "About Me",
 				"url": "/about"
+			},
+			{
+				"title": "Resume",
+				"url": "/resume"
 			}
 		]
 	}

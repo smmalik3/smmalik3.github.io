@@ -6,12 +6,12 @@
 		"layout": "_page"
 	},
 	"feed": {
-		"layout": "false"
+		"layout": "_page"
 	}
 	,"404": {
 		"layout": "_minimal"
 	},
 	"search": {
-		"layout": "false"
+		"layout": "_page"
 	}
 }
