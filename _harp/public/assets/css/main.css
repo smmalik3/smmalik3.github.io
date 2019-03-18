@@ -1,5 +1,3 @@
-$brand-color: #06a148;
-
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -230,7 +228,7 @@ h1, h2, h3, h4 {
   background: #fff;
 }
 .icons-home a:hover .icon {
-  fill: $brand-color
+  fill: #0562DC;
 }
 .down {
   position: absolute;
@@ -277,7 +275,7 @@ a.slideButton, .dosearch {
 }
 .dosearch {
   right: 10px;
-  background: darken($brand-color, 7%);
+  background: darken(#0562DC, 7%);
   border-radius: .188rem;
   padding: .125rem .188rem
 }
@@ -285,7 +283,7 @@ a.slideButton, .dosearch {
   cursor: pointer;
   padding: .313rem;
   border-radius: .188rem;
-  background: darken($brand-color, 7%);
+  background: darken(#0562DC, 7%);
   width: 2.5rem;
   height: 2.5rem;
   fill: #fff
@@ -470,7 +468,7 @@ body.search-overlay:after {
 }
 @media only screen and (max-width:37.5rem) {
   body.search-overlay:after {
-    background-color: $brand-color
+    background-color: #0562DC
   }
 }
 .search-wrapper {
@@ -528,9 +526,9 @@ body.search-overlay:after {
 }
 .tags a {
   font-size: .875rem;
-  color: $brand-color;
+  color: #0562DC;
   display: inline-block;
-  border: 1px solid $brand-color;
+  border: 1px solid #0562DC;
   border-radius: .313rem;
   padding: .25rem .625rem;
   margin-right: .125rem;
@@ -538,8 +536,8 @@ body.search-overlay:after {
   text-decoration: none;
 }
 .tags a:hover {
-  color: darken($brand-color, 30%);
-  border: 1px solid darken($brand-color, 30%)
+  color: darken(#0562DC, 30%);
+  border: 1px solid darken(#0562DC, 30%)
 }
 .img-rounded {
   border-radius: 50%
@@ -548,7 +546,7 @@ html, body {
   height: 100%
 }
 .header-site, .header-post {
-  background: $brand-color;
+  background: #0562DC;
   height: 100%;
 }
 .header-post-bg{
@@ -746,7 +744,7 @@ html, body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   font-style: normal;
-  color: $brand-color;
+  color: #0562DC;
   font-size: 5rem;
   line-height: 1.6;
 }
@@ -809,7 +807,7 @@ html, body {
   text-decoration: none
 }
 .post-item .content .date {
-  color: $brand-color
+  color: #0562DC
 }
 .post-item .content .post-title {
   color: #000;
@@ -828,7 +826,7 @@ html, body {
   font-size: 1.25rem;
 }
 .post-item .content .description a {
-  color: $brand-color;
+  color: #0562DC;
   text-decoration: underline
 }
 .post-content {
@@ -874,15 +872,15 @@ html, body {
   color: #333;
 }
 .post-content p code, .post-content li code {
-  color: lighten($brand-color, 15%);
+  color: lighten(#0562DC, 15%);
 }
 .post-content a {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-style: normal;
-  color: $brand-color;
+  color: #0562DC;
   text-decoration: none;
-  border-bottom: 2px solid $brand-color
+  border-bottom: 2px solid #0562DC
 }
 .post-content iframe {
   margin-top: 1.875rem;
@@ -944,7 +942,7 @@ html, body {
   margin-left: auto;
   padding-left: 0;
   padding-right: 0;
-  border-left: .313rem solid $brand-color;
+  border-left: .313rem solid #0562DC;
   padding: 0 1.875rem;
   margin: 3.125rem auto;
 }
@@ -1021,7 +1019,7 @@ html, body {
   text-decoration: none;
 }
 .share a:hover svg {
-  fill: $brand-color
+  fill: #0562DC
 }
 table {
   margin: 3.125rem auto;
@@ -1082,8 +1080,8 @@ table th, table td {
   transition: all .5s;
 }
 .post-list a:hover {
-  color: darken($brand-color, 30%);
-  border-bottom: 1px solid darken($brand-color, 30%)
+  color: darken(#0562DC, 30%);
+  border-bottom: 1px solid darken(#0562DC, 30%)
 }
 .post-list .entry-date {
   float: right;
@@ -1250,7 +1248,7 @@ pre span {
   color: #fff
 }
 .highlight .m {
-  color: lighten($brand-color, 40%);
+  color: lighten(#0562DC, 40%);
   font-weight: bold
 }
 .highlight .s {
@@ -1308,53 +1306,53 @@ pre span {
   color: #888
 }
 .highlight .mf {
-  color: lighten($brand-color, 40%);
+  color: lighten(#0562DC, 40%);
   font-weight: bold
 }
 .highlight .mh {
-  color: lighten($brand-color, 40%);
+  color: lighten(#0562DC, 40%);
   font-weight: bold
 }
 .highlight .mi {
-  color: lighten($brand-color, 40%);
+  color: lighten(#0562DC, 40%);
   font-weight: bold
 }
 .highlight .mo {
-  color: lighten($brand-color, 40%);
+  color: lighten(#0562DC, 40%);
   font-weight: bold
 }
 .highlight .sb {
-  color: lighten($brand-color, 40%)
+  color: lighten(#0562DC, 40%)
 }
 .highlight .sc {
-  color: lighten($brand-color, 40%)
+  color: lighten(#0562DC, 40%)
 }
 .highlight .sd {
-  color: lighten($brand-color, 40%)
+  color: lighten(#0562DC, 40%)
 }
 .highlight .s2 {
-  color: lighten($brand-color, 40%)
+  color: lighten(#0562DC, 40%)
 }
 .highlight .se {
-  color: lighten($brand-color, 40%)
+  color: lighten(#0562DC, 40%)
 }
 .highlight .sh {
-  color: lighten($brand-color, 40%)
+  color: lighten(#0562DC, 40%)
 }
 .highlight .si {
-  color: lighten($brand-color, 40%)
+  color: lighten(#0562DC, 40%)
 }
 .highlight .sx {
-  color: lighten($brand-color, 40%)
+  color: lighten(#0562DC, 40%)
 }
 .highlight .sr {
-  color: lighten($brand-color, 40%)
+  color: lighten(#0562DC, 40%)
 }
 .highlight .s1 {
-  color: lighten($brand-color, 40%)
+  color: lighten(#0562DC, 40%)
 }
 .highlight .ss {
-  color: lighten($brand-color, 40%)
+  color: lighten(#0562DC, 40%)
 }
 .highlight .bp {
   color: #fff
@@ -1369,7 +1367,7 @@ pre span {
   color: #fff
 }
 .highlight .il {
-	color: lighten($brand-color, 40%);
+	color: lighten(#0562DC, 40%);
   font-weight: bold
 }
 .author {
@@ -1431,7 +1429,7 @@ pre span {
   font-size: 1.875rem;
 }
 .author .name a:hover {
-  color: $brand-color
+  color: #0562DC
 }
 @media only screen and (min-width:37.5rem) {
   .author .name a {
@@ -1452,7 +1450,7 @@ pre span {
 }
 .author .email {
   text-decoration: none;
-  color: $brand-color
+  color: #0562DC
 }
 .comments {
   *zoom: 1;
@@ -1478,7 +1476,8 @@ pre span {
   font-size: 1.875rem
 }
 footer {
-  background: $brand-color;
+  /*background: #0562DC;*/
+  background: #0562DC;
   padding: 1.563rem 0;
   margin-top: 100px;
 }
@@ -1492,5 +1491,8 @@ footer p, footer a {
   margin: 0
 }
 footer a:hover {
-  color: #900
+  color: #840101;
+}
+footer p:hover {
+  color: #840101;
 }
