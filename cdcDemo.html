@@ -14,6 +14,35 @@
 	<title>CDC Watch Team Form</title>
 </head>
 <body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">CDC Watch Team</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://cdc.gov">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.cdc.gov/outbreaks/index.html">Outbreaks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.cdc.gov/media/index.html">News</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      CDC Watch Team Demo
+    </span>
+  </div>
+</nav>
+</div>
+</div>
+</div>
 	<div class="container">
 		<div class="row">
 			<div class="col">
@@ -27,7 +56,7 @@
 						<div aria-labelledby="headingOne" class="collapse show" data-parent="#accordion" id="collapseOne">
 							<div class="card-body">
 								<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
-									<input name="orgid" type="hidden" value="00D5C0000000fyp"> <input name="retURL" type="hidden" value="https://smmalik3.github.io/cdcDemo">
+									<input name="orgid" type="hidden" value="00D5C0000000fyp"> <input name="retURL" type="hidden" value="google.com">
 									<div class="form-group">
 										<label for="name">Name</label> <input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> <small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> <label for="email">Email</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APS" maxlength="80" name="00N5C0000035APS" placeholder="Enter your email" size="20" type="text"> <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> <label for="phone">Phone</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" onkeydown="formatPhoneOnEnter(this, event);" placeholder="Enter your phone number" size="20" type="text"> <small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small>
 									</div>
