@@ -36,6 +36,19 @@
 				</nav>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col">
+				<div id="appendMessage"></div>
+				<script type="text/javascript">
+					//Form Confirmation Message
+					(function(){
+						if(document.URL.match('true')){
+							jQuery('#appendMessage').append("<div class='alert alert-success' role='alert'><strong> Well done!</strong> You successfully submitted your request.</div>");
+						}
+					})();
+				</script>
+			</div>
+		</div>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -51,7 +64,8 @@
 							<div class="card-body">
 								<meta content="text/html; charset=UTF-8" http-equiv="Content-type">
 								<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
-									<input name="orgid" type="hidden" value="00D5C0000000fyp"> <input name="retURL" type="hidden" value="https://smmalik3.github.io/cdcDemo">
+									<input name="orgid" type="hidden" value="00D5C0000000fyp"> 
+									<input name="retURL" type="hidden" value="https://smmalik3.github.io/cdcDemo?success=true">
 									<div class="form-group">
 										<label for="name">Name</label> 
 										<input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> 
@@ -247,47 +261,40 @@
 											Wyoming
 										</option>
 									</select><br><br>
-									Have you requested assistance through your local DOH? <select id="00N5C0000035qqb" name="00N5C0000035qqb" title="Contact DOH">
-										<option value="">
-											--None--
-										</option>
-										<option value="Yes">
-											Yes
-										</option>
-										<option value="No">
-											No
-										</option>
-									</select><br><br>
-									If "No", please select a reason you did not contact them <select id="00N5C0000035qqp" name="00N5C0000035qqp" title="Not Contact DOH Reason">
-										<option value="">
-											--None--
-										</option>
-										<option value="Didn&#39;t have contact information">
-											Didn&#39;t have contact information
-										</option>
-										<option value="Didn&#39;t think to do that">
-											Didn&#39;t think to do that
-										</option>
-										<option value="Other">
-											Other
-										</option>
-									</select><br><br>
-									If "Yes", what was their guidance?
-									<div class="input-group">
-									  <div class="input-group-prepend">
-									    <span class="input-group-text">DOH Guidance</span>
-									  </div>
-									  <textarea class="form-control" aria-label="Description" id="00N5C0000035qquUAA" name="00N5C0000035qquUAA" placeholder="Please share your local DOG's guidance here"></textarea>
-									</div><br>
+									Have you requested assistance through your local DOH?
+									<div class="form-check">
+									  <input class="form-check-input" type="radio" name="dohradio" id="dohYes" value="Yes">
+									  <label class="form-check-label" for="dohYes">
+									    Yes
+									  </label>
+									</div>
+									<div class="form-check">
+									  <input class="form-check-input" type="radio" name="dohradio" id="dohNo" value="No">
+									  <label class="form-check-label" for="dohNo">
+									    No
+									  </label>
+									</div>
 									<br>
-									<label for="name">DOH Point of Contact Name</label> 
-										<input aria-describedby="dohName" class="form-control" id="00N5C0000035qqz" maxlength="255" name="00N5C0000035qqz" size="20" type="text"> 
-										<label for="email">DOH Point of Contact Email</label> 
-										<input aria-describedby="dohEmail" class="form-control" id="00N5C0000035qr4" maxlength="80" name="00N5C0000035qr4" size="20" type="text"> 
-										<label for="phone">DOH Point of Contacnt Phone</label> 
-										<input aria-describedby="dohPhone" class="form-control" id="00N5C0000035qrE" maxlength="40" name="00N5C0000035qrE" onkeydown="formatPhoneOnEnter(this, event);" size="20" type="text"> 
+									<div id="addForm"></div>
+									<script type="text/javascript">
+										(function(){
+											//If Yes
+											jQuery('#dohYes').on('click', function(){
+												//Clear div
+												jQuery('#addForm').empty();
+												jQuery('#addForm').append("If 'Yes', what was their guidance?<div class='input-group'><div class='input-group-prepend'><span class='input-group-text'>DOH Guidance</span></div><textarea class='form-control' aria-label='Description' id='00N5C0000035qquUAA' name='00N5C0000035qquUAA' placeholder='Please share your local DOHs guidance here'></textarea></div><br><br><label for='name'>DOH Point of Contact Name</label> <input aria-describedby='dohName' class='form-control' id='00N5C0000035qqz' maxlength='255' name='00N5C0000035qqz' size='20' type='text'> <label for='email'>DOH Point of Contact Email</label> <input aria-describedby='dohEmail' class='form-control' id='00N5C0000035qr4' maxlength='80' name='00N5C0000035qr4' size='20' type='text'><label for='phone'>DOH Point of Contacnt Phone</label> <input aria-describedby='dohPhone' class='form-control' id='00N5C0000035qrE'maxlength='40' name='00N5C0000035qrE' onkeydown='formatPhoneOnEnter(this, event);' size='20' type='text'> ");
+											})
+											//If No
+											jQuery('#dohNo').on('click', function(){
+												//Clear div
+												jQuery('#addForm').empty();
+												jQuery('#addForm').append("If 'No', please select a reason you did not contact them <select id='00N5C0000035qqp' name='00N5C0000035qqp' title='Not Contact DOH Reason'><option value=''>--None--</option><option value='Didn&#39;t have contact information'>Didn&#39;t have contact information</option><option value='Didn&#39;t think to do that'>Didn&#39;t think to do that</option><option value='Other'>Other</option></select><br><br>");
+											})
+										})();
+									</script>
+									<label hidden for="priority" value="Medium">Priority</label>
 									<input id="external" name="external" type="hidden" value="1"><br>
-									<button class="btn btn-primary my-custom-confirmation" name="submit" type="submit">Submit</button>
+									<button class="btn btn-primary my-custom-confirmation" name="submit" type="submit" data-toggle="modal" data-target="#confirm-submit">Submit</button>
 								</form>
 								<div class="col"></div>
 
@@ -302,7 +309,7 @@
 								<div class="card-body">
 									<div class="card-body">
 									<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
-										<input name="orgid" type="hidden" value="00D5C0000000fyp"> <input name="retURL" type="hidden" value="google.com">
+										<input name="orgid" type="hidden" value="00D5C0000000fyp"> <input name="retURL" type="hidden" value="https://smmalik3.github.io/cdcDemo?success=true">
 										<div class="form-group">
 											<label for="name">Name</label> <input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> <small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> <label for="email">Email</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APS" maxlength="80" name="00N5C0000035APS" placeholder="Enter your email" size="20" type="text"> <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> <label for="phone">Phone</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" onkeydown="formatPhoneOnEnter(this, event);" placeholder="Enter your phone number" size="20" type="text"> <small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small>
 										Requesting Agency:<select  id="00N5C0000035wP1" name="00N5C0000035wP1" title="Requesting Agency"><option value="">--None--</option><option value="Executive Office of the President">Executive Office of the President</option>
@@ -361,7 +368,7 @@
 								<div class="card-body">
 									<div class="card-body">
 									<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
-										<input name="orgid" type="hidden" value="00D5C0000000fyp"> <input name="retURL" type="hidden" value="google.com">
+										<input name="orgid" type="hidden" value="00D5C0000000fyp"> <input name="retURL" type="hidden" value="https://smmalik3.github.io/cdcDemo?success=true">
 										<div class="form-group">
 											<label for="name">Name</label> <input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> <small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> <label for="email">Email</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APS" maxlength="80" name="00N5C0000035APS" placeholder="Enter your email" size="20" type="text"> <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> <label for="phone">Phone</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" onkeydown="formatPhoneOnEnter(this, event);" placeholder="Enter your phone number" size="20" type="text"> <small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small>
 										</div>
@@ -379,22 +386,11 @@
 											Other
 										</option>
 									</select><br><br>
-									Request Type:<select id="00N5C0000035qqQ" name="00N5C0000035qqQ" title="Request Type">
-										<option value="">
-											--None--
-										</option>
-										<option value="Analyze test results, irregularities, or anomalies">
-											Analyze test results, irregularities, or anomalies
-										</option>
-										<option value="Report a potential outbreak">
-											Report a potential outbreak
-										</option>
-										<option value="General assistance">
-											General assistance
-										</option>
-										<option value="Other">
-											Other
-										</option>
+									Notification Type:<select  id="00N5C0000035yUI" name="00N5C0000035yUI" title="Notification Type">
+									<option value="">--None--</option>
+									<option value="Emergency Related">Emergency Related</option>
+									<option value="Awareness">Awareness</option>
+									<option value="Irregularity">Irregularity</option>
 									</select><br><br>
 									<div class="input-group">
 									  <div class="input-group-prepend">
@@ -408,68 +404,6 @@
 								</div>
 							</div>
 						</div>
-<!-- 						<div class="card">
-							<div class="card-header" id="headingOne">
-								<h5 class="mb-0"><button aria-controls="collapseOne" aria-expanded="true" class="btn btn-link" data-target="#collapseOne" data-toggle="collapse">Salesforce Generated Web Form Example</button></h5>
-							</div>
-							<div aria-labelledby="headingOne" class="collapse show" data-parent="#accordion" id="collapseOne">
-								<div class="card-body">
-									<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
-										<input name="orgid" type="hidden" value="00D5C0000000fyp"> <input name="retURL" type="hidden" value="google.com">
-										<div class="form-group">
-											<label for="name">Name</label> <input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> <small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> <label for="email">Email</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APS" maxlength="80" name="00N5C0000035APS" placeholder="Enter your email" size="20" type="text"> <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> <label for="phone">Phone</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" onkeydown="formatPhoneOnEnter(this, event);" placeholder="Enter your phone number" size="20" type="text"> <small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small>
-										</div>
-										<div class="form-group">
-											Outbreak Type:<select id="00N5C00000357Bm" name="00N5C00000357Bm" title="Outbreak Type">
-												<option value="">
-													--None--
-												</option>
-												<option value="Flu">
-													Flu
-												</option>
-												<option value="Ebola">
-													Ebola
-												</option>
-												<option value="Smallpox">
-													Smallpox
-												</option>
-												<option value="Generic">
-													Generic
-												</option>
-												<option value="Drug Related">
-													Drug Related
-												</option>
-											</select><br>
-											<label for="subject">Subject</label> <input class="form-control" id="subject" maxlength="80" name="subject" placeholder="" size="20" type="text"><br>
-										</div>
-										<div class="form-group">
-											<label for="description">Description</label> 
-											<textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea> <input id="external" name="external" type="hidden" value="1"><br>
-										</div><button class="btn btn-primary my-custom-confirmation" name="submit" type="submit">Submit</button>
-									</form>
-								</div>
-							</div>
-						</div> -->
-<!-- 						<div class="card">
-							<div class="card-header" id="headingTwo">
-								<h5 class="mb-0"><button aria-controls="collapseTwo" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseTwo" data-toggle="collapse">Lightning Community Based Form placed in an iFrame Example</button></h5>
-							</div>
-							<div aria-labelledby="headingTwo" class="collapse" data-parent="#accordion" id="collapseTwo">
-								<div class="card-body">
-									<iframe frameborder="1" height="345" src="https://watchteam-deldigicdc.cs62.force.com/cdc2/s/" width="420"></iframe>
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-header" id="headingThree">
-								<h5 class="mb-0"><button aria-controls="collapseThree" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseThree" data-toggle="collapse">Standard Lightning Community Form Example</button></h5>
-							</div>
-							<div aria-labelledby="headingThree" class="collapse" data-parent="#accordion" id="collapseThree">
-								<div class="card-body">
-									<b><a href="https://watchteam-deldigicdc.cs62.force.com/cdc2/s/">Link to Lightning Community hosted on Salesforce</a></b>
-								</div>
-							</div>
-						</div> -->
 					</div>
 				</div>
 				<div class="col"></div>
