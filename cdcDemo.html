@@ -40,12 +40,12 @@
 			<div class="col">
 				<div id="appendMessage"></div>
 				<script type="text/javascript">
-					//Form Confirmation Message
-					(function(){
-						if(document.URL.match('true')){
-							jQuery('#appendMessage').append("<div class='alert alert-success' role='alert'><strong> Well done!</strong> You successfully submitted your request.</div>");
-						}
-					})();
+	                //Form Confirmation Message
+	                (function(){
+	                    if(document.URL.match('true')){
+	                        jQuery('#appendMessage').append("<div class='alert alert-success' role='alert'><strong> Well done!<\/strong> You successfully submitted your request.<\/div>");
+	                    }
+	                })();
 				</script>
 			</div>
 		</div>
@@ -65,21 +65,23 @@
 								<meta content="text/html; charset=UTF-8" http-equiv="Content-type">
 								<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
 									<input type="hidden" name="orgid" value="00D5C0000000fyp"> 
-									<input type="hidden" name="retURL" value="https://smmalik3.github.io/cdcDemo?success=true">
-									<input type="hidden" name="recordType" id="recordType" value="0125C000000K5WrQAK">
+									<input type="hidden" name="retURL" value="https://smmalik3.github.io/cdcDemo?success=true"> 
+									<input type="hidden" id="recordType" name="recordType" value="0125C000000K5WrQAK"> 
 									<input type="hidden" name="priority" value="Medium">
 									<div class="form-group">
 										<label for="name">Name</label> 
 										<input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> 
-										<small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> 
+										<small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small>
+										<!-- Have to use this email field to populate the 'Web Email' field and prevent error messages -->
 										<label for="email">Email</label> 
-										<input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APS" maxlength="80" name="00N5C0000035APS" placeholder="Enter your email" size="20" type="text"> 
+										<input aria-describedby="emailHelp" class="form-control" id="email" maxlength="80" name="email" size="20" type="text" placeholder="Enter your email">
 										<small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> 
 										<label for="phone">Phone</label> 
 										<input aria-describedby="phoneHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" placeholder="Enter your phone number" size="20" type="text"> 
-										<small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small> <br>
+										<small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small>
 									</div>
-									Occupation:<select id="00N5C0000035qqB" name="00N5C0000035qqB" title="Occupation">
+									Occupation:<br>
+									<select id="00N5C0000035qqB" name="00N5C0000035qqB" title="Occupation">
 										<option value="">
 											--None--
 										</option>
@@ -92,8 +94,10 @@
 										<option value="Other">
 											Other
 										</option>
-									</select><br><br>
-									Request Type:<select id="00N5C0000035qqQ" name="00N5C0000035qqQ" title="Request Type">
+									</select>
+									<br>
+									Request Type:<br>
+									<select id="00N5C0000035qqQ" name="00N5C0000035qqQ" title="Request Type">
 										<option value="">
 											--None--
 										</option>
@@ -109,14 +113,14 @@
 										<option value="Other">
 											Other
 										</option>
-									</select><br><br>
+									</select>
+									<br><br>
 									<div class="input-group">
-									  <div class="input-group-prepend">
-									    <span class="input-group-text">Request Description</span>
-									  </div>
-									  <textarea class="form-control" aria-label="Description" id="00N5C0000035qqLUAQ" name="00N5C0000035qqLUAQ" placeholder="Please enter a brief description of your request here"></textarea>
-									</div>
-									<br>
+										<div class="input-group-prepend">
+											<span class="input-group-text">Request Description</span>
+										</div>
+										<textarea aria-label="Description" class="form-control" id="00N5C0000035qqLUAQ" name="00N5C0000035qqLUAQ" placeholder="Please enter a brief description of your request here"></textarea>
+									</div><br>
 									What is your local Department of Health? <select id="00N5C0000035qrJ" name="00N5C0000035qrJ" title="Local DOH">
 										<option value="">
 											--None--
@@ -157,8 +161,11 @@
 										<option value="Idaho">
 											Idaho
 										</option>
-										<option value="Illinois Indiana">
-											Illinois Indiana
+										<option value="Illinois">
+											Illinois
+										</option>
+										<option value="Indiana">
+											Indiana
 										</option>
 										<option value="Iowa">
 											Iowa
@@ -193,8 +200,11 @@
 										<option value="Missouri">
 											Missouri
 										</option>
-										<option value="Montana Nebraska">
-											Montana Nebraska
+										<option value="Montana">
+											Montana
+										</option>
+										<option value="Nebraska">
+											Nebraska
 										</option>
 										<option value="Nevada">
 											Nevada
@@ -226,8 +236,11 @@
 										<option value="Oregon">
 											Oregon
 										</option>
-										<option value="Pennsylvania Rhode Island">
-											Pennsylvania Rhode Island
+										<option value="Pennsylvania">
+											Pennsylvania
+										</option>
+										<option value="Rhode Island">
+											Rhode Island
 										</option>
 										<option value="South Carolina">
 											South Carolina
@@ -262,161 +275,216 @@
 										<option value="Wyoming">
 											Wyoming
 										</option>
-									</select><br><br>
+									</select><br>
 									Have you requested assistance through your local DOH?
 									<div class="form-check">
-									  <input class="form-check-input" type="radio" name="dohradio" id="dohYes" value="Yes">
-									  <label class="form-check-label" for="dohYes">
-									    Yes
-									  </label>
+										<input class="form-check-input" id="dohYes" name="dohradio" type="radio" value="Yes"> 
+										<label class="form-check-label" for="dohYes">Yes</label>
 									</div>
 									<div class="form-check">
-									  <input class="form-check-input" type="radio" name="dohradio" id="dohNo" value="No">
-									  <label class="form-check-label" for="dohNo">
-									    No
-									  </label>
-									</div>
-									<br>
+										<input class="form-check-input" id="dohNo" name="dohradio" type="radio" value="No"> 
+										<label class="form-check-label" for="dohNo">No</label>
+									</div><br>
 									<div id="addForm"></div>
 									<script type="text/javascript">
-										(function(){
-											//If Yes
-											jQuery('#dohYes').on('click', function(){
-												//Clear div
-												jQuery('#addForm').empty();
-												jQuery('#addForm').append("If 'Yes', what was their guidance?<div class='input-group'><div class='input-group-prepend'><span class='input-group-text'>DOH Guidance</span></div><textarea class='form-control' aria-label='Description' id='00N5C0000035qquUAA' name='00N5C0000035qquUAA' placeholder='Please share your local DOHs guidance here'></textarea></div><br><br><label for='name'>DOH Point of Contact Name</label> <input aria-describedby='dohName' class='form-control' id='00N5C0000035qqz' maxlength='255' name='00N5C0000035qqz' size='20' type='text'> <label for='email'>DOH Point of Contact Email</label> <input aria-describedby='dohEmail' class='form-control' id='00N5C0000035qr4' maxlength='80' name='00N5C0000035qr4' size='20' type='text'><label for='phone'>DOH Point of Contacnt Phone</label> <input aria-describedby='dohPhone' class='form-control' id='00N5C0000035qrE'maxlength='40' name='00N5C0000035qrE' size='20' type='text'> ");
-											})
-											//If No
-											jQuery('#dohNo').on('click', function(){
-												//Clear div
-												jQuery('#addForm').empty();
-												jQuery('#addForm').append("If 'No', please select a reason you did not contact them <select id='00N5C0000035qqp' name='00N5C0000035qqp' title='Not Contact DOH Reason'><option value=''>--None--</option><option value='Didn&#39;t have contact information'>Didn&#39;t have contact information</option><option value='Didn&#39;t think to do that'>Didn&#39;t think to do that</option><option value='Other'>Other</option></select><br><br>");
-											})
-										})();
-									</script>
-									<input id="external" name="external" type="hidden" value="1"><br>
-									<button class="btn btn-primary my-custom-confirmation" name="submit" type="submit" data-toggle="modal" data-target="#confirm-submit">Submit</button>
+		                               (function(){
+		                                   //If Yes
+		                                   jQuery('#dohYes').on('click', function(){
+		                                       //Clear div
+		                                       jQuery('#addForm').empty();
+		                                       jQuery('#addForm').append("If 'Yes', what was their guidance?<div class='input-group'><div class='input-group-prepend'><span class='input-group-text'>DOH Guidance<\/span><\/div><textarea class='form-control' aria-label='Description' id='00N5C0000035qquUAA' name='00N5C0000035qquUAA' placeholder='Please share your local DOHs guidance here'><\/textarea><\/div><br><br><label for='name'>DOH Point of Contact Name<\/label> <input aria-describedby='dohName' class='form-control' id='00N5C0000035qqz' maxlength='255' name='00N5C0000035qqz' size='20' type='text'> <label for='email'>DOH Point of Contact Email<\/label> <input aria-describedby='dohEmail' class='form-control' id='00N5C0000035qr4' maxlength='80' name='00N5C0000035qr4' size='20' type='text'><label for='phone'>DOH Point of Contacnt Phone<\/label> <input aria-describedby='dohPhone' class='form-control' id='00N5C0000035qrE'maxlength='40' name='00N5C0000035qrE' size='20' type='text'> ");
+		                                   })
+		                                   //If No
+		                                   jQuery('#dohNo').on('click', function(){
+		                                       //Clear div
+		                                       jQuery('#addForm').empty();
+		                                       jQuery('#addForm').append("If 'No', please select a reason you did not contact them <select id='00N5C0000035qqp' name='00N5C0000035qqp' title='Not Contact DOH Reason'><option value=''>--None--<\/option><option value='Didn&#39;t have contact information'>Didn&#39;t have contact information<\/option><option value='Didn&#39;t think to do that'>Didn&#39;t think to do that<\/option><option value='Other'>Other<\/option><\/select><br><br>");
+		                                   })
+		                               })();
+									</script> <input id="external" name="external" type="hidden" value="1"><br>
+									<button class="btn btn-primary my-custom-confirmation" data-target="#confirm-submit" data-toggle="modal" name="submit" type="submit">Submit</button>
 								</form>
 								<div class="col"></div>
-
 							</div>
 						</div>
 						<div class="card">
 							<div class="card-header" id="headingFive">
-							<h5 class="mb-0"><button aria-controls="collapseFive" aria-expanded="true" class="btn btn-link" data-target="#collapseFive" data-toggle="collapse">Request Assisstance from CDC: Other Agency </button></h5>
+								<h5 class="mb-0"><button aria-controls="collapseFive" aria-expanded="true" class="btn btn-link" data-target="#collapseFive" data-toggle="collapse">Request Assisstance from CDC: Other Agency</button></h5>
 							</div>
 							<div aria-labelledby="headingFive" class="collapse show" data-parent="#accordion" id="collapseFive">
 								<div class="card-body">
 									<div class="card-body">
-									<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
-										<input name="orgid" type="hidden" value="00D5C0000000fyp"> 
-										<input name="retURL" type="hidden" value="https://smmalik3.github.io/cdcDemo?success=true">
-										<input type="hidden" name="recordType" id="recordType" value="0125C000000K5WrQAK">
-										<input type="hidden" name="priority" value="Medium">
-										<div class="form-group">
-											<label for="name">Name</label> <input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> <small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> <label for="email">Email</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APS" maxlength="80" name="00N5C0000035APS" placeholder="Enter your email" size="20" type="text"> <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> <label for="phone">Phone</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" placeholder="Enter your phone number" size="20" type="text"> <small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small>
-										Requesting Agency:<select  id="00N5C0000035wP1" name="00N5C0000035wP1" title="Requesting Agency"><option value="">--None--</option><option value="Executive Office of the President">Executive Office of the President</option>
-										<option value="United States Department of Agriculture (USDA)">United States Department of Agriculture (USDA)</option>
-										<option value="United States Department of Commerce">United States Department of Commerce</option>
-										<option value="United States Department of Defense (DOD)">United States Department of Defense (DOD)</option>
-										<option value="United States Department of Education">United States Department of Education</option>
-										<option value="United States Department of Energy">United States Department of Energy</option>
-										<option value="United States Department of Health and Human Services">United States Department of Health and Human Services</option>
-										<option value="United States Department of Homeland Security">United States Department of Homeland Security</option>
-										<option value="United States Department of Housing and Urban Development">United States Department of Housing and Urban Development</option>
-										<option value="United States Department of the Interior">United States Department of the Interior</option>
-										<option value="United States Department of Justice">United States Department of Justice</option>
-										<option value="United States Department of Labor (DOL)">United States Department of Labor (DOL)</option>
-										<option value="United States Department of State (DOS)">United States Department of State (DOS)</option>
-										<option value="United States Department of Transportation">United States Department of Transportation</option>
-										<option value="United States Department of the Treasury">United States Department of the Treasury</option>
-										<option value="United States Department of Veterans Affairs">United States Department of Veterans Affairs</option>
-										</select><br>
-	
-										Request Type:<select id="00N5C0000035qqQ" name="00N5C0000035qqQ" title="Request Type">
-										<option value="">
-											--None--
-										</option>
-										<option value="Analyze test results, irregularities, or anomalies">
-											Analyze test results, irregularities, or anomalies
-										</option>
-										<option value="Report a potential outbreak">
-											Report a potential outbreak
-										</option>
-										<option value="General assistance">
-											General assistance
-										</option>
-										<option value="Other">
-											Other
-										</option>
-									</select><br><br>
-									<div class="input-group">
-									  <div class="input-group-prepend">
-									    <span class="input-group-text">Request Description</span>
-									  </div>
-									  <textarea class="form-control" aria-label="Description" id="00N5C0000035qqLUAQ" name="00N5C0000035qqLUAQ" placeholder="Please enter a brief description of your request here"></textarea>
+										<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
+											<input type="hidden" name="orgid" value="00D5C0000000fyp"> 
+											<input type="hidden" name="retURL" value="https://smmalik3.github.io/cdcDemo?success=true"> 
+											<input type="hidden" id="recordType" name="recordType" value="0125C000000K5WrQAK"> 
+											<input type="hidden" name="priority" value="Medium">
+											<div class="form-group">
+												<label for="name">Name</label> 
+												<input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> 
+												<small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> 
+												<!-- Have to use this email field to populate the 'Web Email' field and prevent error messages -->
+												<label for="email">Email</label> 
+												<input aria-describedby="emailHelp" class="form-control" id="email" maxlength="80" name="email" size="20" type="text" placeholder="Enter your email">
+												<small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> 
+												<label for="phone">Phone</label> 
+												<input aria-describedby="phoneHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" placeholder="Enter your phone number" size="20" type="text"> 
+												<small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small> 
+												Requesting Agency:<select id="00N5C0000035wP1" name="00N5C0000035wP1" title="Requesting Agency">
+													<option value="">
+														--None--
+													</option>
+													<option value="Executive Office of the President">
+														Executive Office of the President
+													</option>
+													<option value="United States Department of Agriculture (USDA)">
+														United States Department of Agriculture (USDA)
+													</option>
+													<option value="United States Department of Commerce">
+														United States Department of Commerce
+													</option>
+													<option value="United States Department of Defense (DOD)">
+														United States Department of Defense (DOD)
+													</option>
+													<option value="United States Department of Education">
+														United States Department of Education
+													</option>
+													<option value="United States Department of Energy">
+														United States Department of Energy
+													</option>
+													<option value="United States Department of Health and Human Services">
+														United States Department of Health and Human Services
+													</option>
+													<option value="United States Department of Homeland Security">
+														United States Department of Homeland Security
+													</option>
+													<option value="United States Department of Housing and Urban Development">
+														United States Department of Housing and Urban Development
+													</option>
+													<option value="United States Department of the Interior">
+														United States Department of the Interior
+													</option>
+													<option value="United States Department of Justice">
+														United States Department of Justice
+													</option>
+													<option value="United States Department of Labor (DOL)">
+														United States Department of Labor (DOL)
+													</option>
+													<option value="United States Department of State (DOS)">
+														United States Department of State (DOS)
+													</option>
+													<option value="United States Department of Transportation">
+														United States Department of Transportation
+													</option>
+													<option value="United States Department of the Treasury">
+														United States Department of the Treasury
+													</option>
+													<option value="United States Department of Veterans Affairs">
+														United States Department of Veterans Affairs
+													</option>
+												</select><br>
+												Request Type:<select id="00N5C0000035qqQ" name="00N5C0000035qqQ" title="Request Type">
+													<option value="">
+														--None--
+													</option>
+													<option value="Analyze test results, irregularities, or anomalies">
+														Analyze test results, irregularities, or anomalies
+													</option>
+													<option value="Report a potential outbreak">
+														Report a potential outbreak
+													</option>
+													<option value="General assistance">
+														General assistance
+													</option>
+													<option value="Other">
+														Other
+													</option>
+												</select><br>
+												<br>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">Request Description</span>
+													</div>
+													<textarea aria-label="Description" class="form-control" id="00N5C0000035qqLUAQ" name="00N5C0000035qqLUAQ" placeholder="Please enter a brief description of your request here"></textarea>
+												</div>
+											</div><input id="external" name="external" type="hidden" value="1"><br>
+											<button class="btn btn-primary my-custom-confirmation" name="submit" type="submit">Submit</button>
+										</form>
 									</div>
-										</div>
-										<input id="external" name="external" type="hidden" value="1"><br>
-									<button class="btn btn-primary my-custom-confirmation" name="submit" type="submit">Submit</button>
-									</form>
 								</div>
 							</div>
-						</div>
-						<div class="card">
-							<div class="card-header" id="headingSix">
-							<h5 class="mb-0"><button aria-controls="collapseSix" aria-expanded="true" class="btn btn-link" data-target="#collapseSix" data-toggle="collapse">Notify Watch Team </button></h5>
-							</div>
-							<div aria-labelledby="headingSix" class="collapse show" data-parent="#accordion" id="collapseSix">
-								<div class="card-body">
+							<div class="card">
+								<div class="card-header" id="headingSix">
+									<h5 class="mb-0"><button aria-controls="collapseSix" aria-expanded="true" class="btn btn-link" data-target="#collapseSix" data-toggle="collapse">Notify Watch Team</button></h5>
+								</div>
+								<div aria-labelledby="headingSix" class="collapse show" data-parent="#accordion" id="collapseSix">
 									<div class="card-body">
-									<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
-										<input name="orgid" type="hidden" value="00D5C0000000fyp"> 
-										<input name="retURL" type="hidden" value="https://smmalik3.github.io/cdcDemo?success=true">
-										<input type="hidden" name="recordType" id="recordType" value="0125C000000K5WrQAK">
-										<input type="hidden" name="priority" value="Medium">
-										<div class="form-group">
-											<label for="name">Name</label> <input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> <small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> <label for="email">Email</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APS" maxlength="80" name="00N5C0000035APS" placeholder="Enter your email" size="20" type="text"> <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> <label for="phone">Phone</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" placeholder="Enter your phone number" size="20" type="text"> <small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small>
+										<div class="card-body">
+											<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
+												<input type="hidden" name="orgid" value="00D5C0000000fyp"> 
+												<input type="hidden" name="retURL" value="https://smmalik3.github.io/cdcDemo?success=true"> 
+												<input type="hidden" id="recordType" name="recordType" value="0125C000000K5WrQAK"> 
+												<input type="hidden" name="priority" value="Medium">
+												<div class="form-group">
+													<label for="name">Name</label> 
+													<input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> 
+													<small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> 
+													<!-- Have to use this email field to populate the 'Web Email' field and prevent error messages -->
+													<label for="email">Email</label> 
+													<input aria-describedby="emailHelp" class="form-control" id="email" maxlength="80" name="email" size="20" type="text" placeholder="Enter your email">
+													<small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> 
+													<label for="phone">Phone</label> 
+													<input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" placeholder="Enter your phone number" size="20" type="text"> 
+													<small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small>
+												</div>Occupation:<br>
+												<select id="00N5C0000035qqB" name="00N5C0000035qqB" title="Occupation">
+													<option value="">
+														--None--
+													</option>
+													<option value="Physician">
+														Physician
+													</option>
+													<option value="Clinician">
+														Clinician
+													</option>
+													<option value="Other">
+														Other
+													</option>
+												</select><br>
+												Notification Type:<br>
+												<select id="00N5C0000035yUI" name="00N5C0000035yUI" title="Notification Type">
+													<option value="">
+														--None--
+													</option>
+													<option value="Emergency Related">
+														Emergency Related
+													</option>
+													<option value="Awareness">
+														Awareness
+													</option>
+													<option value="Irregularity">
+														Irregularity
+													</option>
+												</select><br>
+												<br>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">Request Description</span>
+													</div>
+													<textarea aria-label="Description" class="form-control" id="00N5C0000035qqLUAQ" name="00N5C0000035qqLUAQ" placeholder="Please enter a brief description of your request here"></textarea>
+												</div><input id="external" name="external" type="hidden" value="1"><br>
+												<button class="btn btn-primary my-custom-confirmation" name="submit" type="submit">Submit</button>
+											</form>
 										</div>
-										Occupation:<select id="00N5C0000035qqB" name="00N5C0000035qqB" title="Occupation">
-										<option value="">
-											--None--
-										</option>
-										<option value="Physician">
-											Physician
-										</option>
-										<option value="Clinician">
-											Clinician
-										</option>
-										<option value="Other">
-											Other
-										</option>
-									</select><br><br>
-									Notification Type:<select  id="00N5C0000035yUI" name="00N5C0000035yUI" title="Notification Type">
-									<option value="">--None--</option>
-									<option value="Emergency Related">Emergency Related</option>
-									<option value="Awareness">Awareness</option>
-									<option value="Irregularity">Irregularity</option>
-									</select><br><br>
-									<div class="input-group">
-									  <div class="input-group-prepend">
-									    <span class="input-group-text">Request Description</span>
-									  </div>
-									  <textarea class="form-control" aria-label="Description" id="00N5C0000035qqLUAQ" name="00N5C0000035qqLUAQ" placeholder="Please enter a brief description of your request here"></textarea>
 									</div>
-										<input id="external" name="external" type="hidden" value="1"><br>
-									<button class="btn btn-primary my-custom-confirmation" name="submit" type="submit">Submit</button>
-									</form>
 								</div>
 							</div>
 						</div>
+						<div class="col"></div>
 					</div>
 				</div>
-				<div class="col"></div>
 			</div>
 		</div>
 	</div>
-</div>
-</div>
 </body>
 </html>
