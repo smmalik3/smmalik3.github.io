@@ -64,8 +64,10 @@
 							<div class="card-body">
 								<meta content="text/html; charset=UTF-8" http-equiv="Content-type">
 								<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
-									<input name="orgid" type="hidden" value="00D5C0000000fyp"> 
-									<input name="retURL" type="hidden" value="https://smmalik3.github.io/cdcDemo?success=true">
+									<input type="hidden" name="orgid" value="00D5C0000000fyp"> 
+									<input type="hidden" name="retURL" value="https://smmalik3.github.io/cdcDemo?success=true">
+									<input type="hidden" name="recordType" id="recordType" value="0125C000000K5WrQAK">
+									<input type="hidden" name="priority" value="Medium">
 									<div class="form-group">
 										<label for="name">Name</label> 
 										<input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> 
@@ -74,7 +76,7 @@
 										<input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APS" maxlength="80" name="00N5C0000035APS" placeholder="Enter your email" size="20" type="text"> 
 										<small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> 
 										<label for="phone">Phone</label> 
-										<input aria-describedby="phoneHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" onkeydown="formatPhoneOnEnter(this, event);" placeholder="Enter your phone number" size="20" type="text"> 
+										<input aria-describedby="phoneHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" placeholder="Enter your phone number" size="20" type="text"> 
 										<small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small> <br>
 									</div>
 									Occupation:<select id="00N5C0000035qqB" name="00N5C0000035qqB" title="Occupation">
@@ -282,7 +284,7 @@
 											jQuery('#dohYes').on('click', function(){
 												//Clear div
 												jQuery('#addForm').empty();
-												jQuery('#addForm').append("If 'Yes', what was their guidance?<div class='input-group'><div class='input-group-prepend'><span class='input-group-text'>DOH Guidance</span></div><textarea class='form-control' aria-label='Description' id='00N5C0000035qquUAA' name='00N5C0000035qquUAA' placeholder='Please share your local DOHs guidance here'></textarea></div><br><br><label for='name'>DOH Point of Contact Name</label> <input aria-describedby='dohName' class='form-control' id='00N5C0000035qqz' maxlength='255' name='00N5C0000035qqz' size='20' type='text'> <label for='email'>DOH Point of Contact Email</label> <input aria-describedby='dohEmail' class='form-control' id='00N5C0000035qr4' maxlength='80' name='00N5C0000035qr4' size='20' type='text'><label for='phone'>DOH Point of Contacnt Phone</label> <input aria-describedby='dohPhone' class='form-control' id='00N5C0000035qrE'maxlength='40' name='00N5C0000035qrE' onkeydown='formatPhoneOnEnter(this, event);' size='20' type='text'> ");
+												jQuery('#addForm').append("If 'Yes', what was their guidance?<div class='input-group'><div class='input-group-prepend'><span class='input-group-text'>DOH Guidance</span></div><textarea class='form-control' aria-label='Description' id='00N5C0000035qquUAA' name='00N5C0000035qquUAA' placeholder='Please share your local DOHs guidance here'></textarea></div><br><br><label for='name'>DOH Point of Contact Name</label> <input aria-describedby='dohName' class='form-control' id='00N5C0000035qqz' maxlength='255' name='00N5C0000035qqz' size='20' type='text'> <label for='email'>DOH Point of Contact Email</label> <input aria-describedby='dohEmail' class='form-control' id='00N5C0000035qr4' maxlength='80' name='00N5C0000035qr4' size='20' type='text'><label for='phone'>DOH Point of Contacnt Phone</label> <input aria-describedby='dohPhone' class='form-control' id='00N5C0000035qrE'maxlength='40' name='00N5C0000035qrE' size='20' type='text'> ");
 											})
 											//If No
 											jQuery('#dohNo').on('click', function(){
@@ -292,7 +294,6 @@
 											})
 										})();
 									</script>
-									<label hidden for="priority" value="Medium">Priority</label>
 									<input id="external" name="external" type="hidden" value="1"><br>
 									<button class="btn btn-primary my-custom-confirmation" name="submit" type="submit" data-toggle="modal" data-target="#confirm-submit">Submit</button>
 								</form>
@@ -300,7 +301,6 @@
 
 							</div>
 						</div>
-
 						<div class="card">
 							<div class="card-header" id="headingFive">
 							<h5 class="mb-0"><button aria-controls="collapseFive" aria-expanded="true" class="btn btn-link" data-target="#collapseFive" data-toggle="collapse">Request Assisstance from CDC: Other Agency </button></h5>
@@ -309,9 +309,12 @@
 								<div class="card-body">
 									<div class="card-body">
 									<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
-										<input name="orgid" type="hidden" value="00D5C0000000fyp"> <input name="retURL" type="hidden" value="https://smmalik3.github.io/cdcDemo?success=true">
+										<input name="orgid" type="hidden" value="00D5C0000000fyp"> 
+										<input name="retURL" type="hidden" value="https://smmalik3.github.io/cdcDemo?success=true">
+										<input type="hidden" name="recordType" id="recordType" value="0125C000000K5WrQAK">
+										<input type="hidden" name="priority" value="Medium">
 										<div class="form-group">
-											<label for="name">Name</label> <input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> <small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> <label for="email">Email</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APS" maxlength="80" name="00N5C0000035APS" placeholder="Enter your email" size="20" type="text"> <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> <label for="phone">Phone</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" onkeydown="formatPhoneOnEnter(this, event);" placeholder="Enter your phone number" size="20" type="text"> <small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small>
+											<label for="name">Name</label> <input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> <small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> <label for="email">Email</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APS" maxlength="80" name="00N5C0000035APS" placeholder="Enter your email" size="20" type="text"> <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> <label for="phone">Phone</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" placeholder="Enter your phone number" size="20" type="text"> <small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small>
 										Requesting Agency:<select  id="00N5C0000035wP1" name="00N5C0000035wP1" title="Requesting Agency"><option value="">--None--</option><option value="Executive Office of the President">Executive Office of the President</option>
 										<option value="United States Department of Agriculture (USDA)">United States Department of Agriculture (USDA)</option>
 										<option value="United States Department of Commerce">United States Department of Commerce</option>
@@ -368,9 +371,12 @@
 								<div class="card-body">
 									<div class="card-body">
 									<form action="https://deldigicdc--watchteam.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="post">
-										<input name="orgid" type="hidden" value="00D5C0000000fyp"> <input name="retURL" type="hidden" value="https://smmalik3.github.io/cdcDemo?success=true">
+										<input name="orgid" type="hidden" value="00D5C0000000fyp"> 
+										<input name="retURL" type="hidden" value="https://smmalik3.github.io/cdcDemo?success=true">
+										<input type="hidden" name="recordType" id="recordType" value="0125C000000K5WrQAK">
+										<input type="hidden" name="priority" value="Medium">
 										<div class="form-group">
-											<label for="name">Name</label> <input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> <small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> <label for="email">Email</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APS" maxlength="80" name="00N5C0000035APS" placeholder="Enter your email" size="20" type="text"> <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> <label for="phone">Phone</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" onkeydown="formatPhoneOnEnter(this, event);" placeholder="Enter your phone number" size="20" type="text"> <small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small>
+											<label for="name">Name</label> <input aria-describedby="nameHelp" class="form-control" id="00N5C0000035API" maxlength="255" name="00N5C0000035API" placeholder="Enter your name" size="20" type="text"> <small class="form-text text-muted" id="nameHelp">We'll never share your name with anyone else.</small> <label for="email">Email</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APS" maxlength="80" name="00N5C0000035APS" placeholder="Enter your email" size="20" type="text"> <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small> <label for="phone">Phone</label> <input aria-describedby="emailHelp" class="form-control" id="00N5C0000035APJ" maxlength="40" name="00N5C0000035APJ" placeholder="Enter your phone number" size="20" type="text"> <small class="form-text text-muted" id="phoneHelp">We'll never share your phone number with anyone else.</small>
 										</div>
 										Occupation:<select id="00N5C0000035qqB" name="00N5C0000035qqB" title="Occupation">
 										<option value="">
@@ -409,13 +415,8 @@
 				<div class="col"></div>
 			</div>
 		</div>
-		<script type="text/javascript">
-		  $('.my-custom-confirmation').confirmation({
-		  onConfirm: function() {
-		      $('#confirmationForm').submit();
-		  }
-		});
-		</script>
 	</div>
+</div>
+</div>
 </body>
 </html>
